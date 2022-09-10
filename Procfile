@@ -1,1 +1,1 @@
-Worker: python3 wikipediabot.py
+worker: python3 wikipediabot.py

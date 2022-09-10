@@ -1,4 +1,5 @@
 import discord, wikipedia
+import os
 
 bot = discord.Bot()
 
@@ -19,4 +20,4 @@ async def random(ctx):
     except:
         await ctx.send(f"**{randomtitle}** \n\n{randomsummary}\n\nhttps://en.wikipedia.org/wiki/{link}")
 
-bot.run('MTAxNzg1NzE4MTA2MTc2MzA3Mw.GbMjq_.qyjJuBX888efnWpbxKhYAOmuyJZ60UISBm9hi4')
+bot.run(os.environ["DISCORD_TOKEN"])
