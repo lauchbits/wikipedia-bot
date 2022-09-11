@@ -5,7 +5,7 @@ bot = discord.Bot()
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Game("/random to get Wikipedia articles"))
+    await bot.change_presence(activity=discord.Game(f"/random | {len(bot.guilds)} servers"))
     print(f"Bot is ready")
 
 testing = [744661575360577576]
