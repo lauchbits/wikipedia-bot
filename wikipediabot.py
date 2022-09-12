@@ -6,8 +6,20 @@ bot = discord.Bot()
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Game(f"/random | {len(bot.guilds)} servers"))
+    await bot.change_presence(activity=discord.Game(f"/help | {len(bot.guilds)} servers"))
     print(f"Logged in as {bot.user}")
+
+
+@bot.slash_command(name= "help", description = "Lists every command")
+async def help(ctx):
+    await ctx.channel.trigger_typing()
+    embed = discord.Embed(title = "Wikipedia Help Page", color = discord.Color.gold())
+    embed.add_field(name = "/search", value = "Search on Wikipedia", inline = False)
+    embed.add_field(name = "/random", value = "Get a random Wikipedia article", inline = False)
+    try:
+        await ctx.respond(embed=embed)
+    except:
+        await ctx.send(embed=embed)
 
 
 @bot.slash_command(name = "search", description = "Search Wikipedia")
