@@ -8,9 +8,7 @@ async def on_ready():
     await bot.change_presence(activity=discord.Game(f"/random | {len(bot.guilds)} servers"))
     print(f"Bot is ready")
 
-testing = [744661575360577576]
-
-@bot.slash_command(guild_ids = testing, name = "random", description = "Returns a random Wikipedia article")
+@bot.slash_command(name = "random", description = "Returns a random Wikipedia article")
 async def random(ctx):
     await ctx.channel.trigger_typing()
     randomtitle = wikipedia.random()
